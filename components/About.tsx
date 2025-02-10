@@ -14,9 +14,9 @@ function About({ pageInfo }: Props) {
             whileInView={{ opacity: 1 }}
             //   viewport={{ once: true }}
             transition={{ duration: 1.5 }}
-            className="flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 h-screen justify-evenly mx-auto items-center"
+            className="flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 min-h-screen justify-evenly mx-auto items-center"
         >
-            <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">About</h3>
+            <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl font-serif">About</h3>
 
             <motion.img
                 initial={{
@@ -26,14 +26,14 @@ function About({ pageInfo }: Props) {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 src={urlFor(pageInfo?.profilePic).url()}
-                className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] object-cover"
+                className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] object-cover shadow-2xl hover:scale-105 transition-transform duration-200"
             ></motion.img>
 
-            <div className="space-y-10 px-0 md:px-10">
-                <h4 className="text-4xl font-semibold">
+            <div className="space-y-10 px-0 md:px-10 max-w-2xl">
+                <h4 className="text-4xl font-serif font-semibold leading-relaxed">
                     Here is a <span className="decoration-[#F7AB0A]/50 underline">little</span> background
                 </h4>
-                <p className="text-lg">{pageInfo?.backgroundInformation}</p>
+                <p className="text-lg font-light leading-relaxed tracking-wide">{pageInfo?.backgroundInformation}</p>
             </div>
         </motion.div>
     );

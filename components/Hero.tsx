@@ -17,6 +17,22 @@ function Hero({ pageInfo }: Props) {
     });
     return (
         <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+            {/* Terminal Portfolio Section - Positioned at bottom right */}
+            <div className="absolute bottom-20 right-5 z-20">
+                <a
+                    href="https://terminal-portfolio-five-cyan.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 bg-[#1E1E1E] text-white px-4 py-2 rounded-lg
+                    transition-all duration-300 hover:bg-[#2D2D2D] hover:scale-105"
+                >
+                    <img src="/terminal-orange.png" alt="Terminal" className="w-6 h-6" />
+                    <span className="text-sm font-medium font-['Montserrat'] tracking-wide">
+                        Are you a Developer? Check out my Terminal Portfolio →
+                    </span>
+                </a>
+            </div>
+
             <BackgroundCircles />
             <img
                 className="relative rounded-full h-32 w-32 mx-auto object-cover"
