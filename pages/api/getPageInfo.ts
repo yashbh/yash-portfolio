@@ -7,7 +7,11 @@ import { PageInfo } from "../../typings";
 const pageInfoQuery = groq`
   *[_type == "pageInfo"][0]
 `;
-
+ console.log('Sanity Config:', {
+            dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+            projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+            baseUrl: process.env.NEXT_PUBLIC_BASE_URL
+        });
 type Data = {
   pageInfo: PageInfo;
 };

@@ -7,6 +7,7 @@ type Props = {
     pageInfo: PageInfo;
 };
 
+
 function About({ pageInfo }: Props) {
     return (
         <motion.div

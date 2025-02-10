@@ -73,6 +73,7 @@ const Home = ({ projects, skills, pageInfo, experiences, socials }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
+    try{
     const pageInfo: PageInfo = await fetchPageInfo();
     const experiences: Experience[] = await fetchExperiences();
     const skills: Skill[] = await fetchSkills();
@@ -87,9 +88,16 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
             projects,
             socials
         },
-        // Next.js will attempt to re-generate the page:
-        // - When a request comes in
-        // - At most once every 10 seconds
         revalidate: 10
     };
+    }
+    catch (error) {
+        console.error("Error fetching data:", error);
+        // Provide fallback data or return notFound
+        return {
+            notFound: true
+            // OR return empty data:
+            // props: { pageInfo: {}, experiences: [], skills: [], projects: [], socials: [] }
+        };
+    }
 };
